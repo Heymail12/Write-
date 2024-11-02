@@ -1,0 +1,12 @@
+
+#!name=UnlockRevenuecat
+#!desc=Revenuecat
+
+[Header Rewrite]
+https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
+
+[Script]
+Revenuecat = type=http-response, pattern=https:\/\/api\.revenuecat\.com, script-path=https://github.com/osinx/Script/raw/refs/heads/main/vip/revenuecat.js, requires-body=true, max-size=0, script-update-interval=-1
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
